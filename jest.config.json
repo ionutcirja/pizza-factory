@@ -7,7 +7,7 @@
   ],
   "collectCoverage": true,
   "collectCoverageFrom": [
-    "**/*.{js}",
+    "**/*.js",
     "!**/node_modules/**",
     "!index.js",
     "!config/**",
