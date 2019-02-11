@@ -22,9 +22,6 @@
   "testMatch": [
     "**/__tests__/?(*.)(spec|test).js"
   ],
-  "moduleNameMapper": {
-    "\\.(scss)$": "<rootDir>/config/module-mock.js"
-  },
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ]
