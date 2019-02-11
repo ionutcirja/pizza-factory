@@ -1,0 +1,31 @@
+{
+  "verbose": true,
+  "clearMocks": true,
+  "restoreMocks": true,
+  "setupFilesAfterEnv": [
+    "<rootDir>/config/enzyme-setup.js"
+  ],
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/*.{js}",
+    "!**/node_modules/**",
+    "!index.js",
+    "!config/**",
+    "!coverage/**",
+    "!webpack.dev.config.js",
+    "!client/index.js",
+    "!client/store/**",
+    "!client/reducers/**",
+    "!client/sagas/**",
+    "!client/style/**"
+  ],
+  "testMatch": [
+    "**/__tests__/?(*.)(spec|test).js"
+  ],
+  "moduleNameMapper": {
+    "\\.(scss)$": "<rootDir>/config/module-mock.js"
+  },
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ]
+}
