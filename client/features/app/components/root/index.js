@@ -11,7 +11,7 @@ type Props = {
   }>,
 };
 
-const App = ({ routes }) => [
+const App = ({ routes }: Props) => [
   <Switch key="routes">
     {routes.map(route => (
       <Route
