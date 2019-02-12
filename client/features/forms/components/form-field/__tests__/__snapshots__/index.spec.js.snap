@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField component render should render a TextField component if type prop value is text 1`] = `
+<FormikConnect(FieldInner)
+  component={[Function]}
+/>
+`;
+
+exports[`FormField component render should render a TextField component if type prop value is undefined 1`] = `
+<FormikConnect(FieldInner)
+  component={[Function]}
+/>
+`;
