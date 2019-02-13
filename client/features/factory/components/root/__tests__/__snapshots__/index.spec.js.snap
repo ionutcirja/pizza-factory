@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Factory component render should render a sizes query component 1`] = `
+<form>
+  <SizesQuery
+    Component={[Function]}
+    ErrorWrapper={[Function]}
+    LoadingWrapper={[Function]}
+  />
+</form>
+`;
+
+exports[`Sizes component render should render a select form field component 1`] = `
+<FormField
+  name="size"
+  options={
+    Array [
+      "option 1",
+      "option 2",
+      "option 3",
+      "option 4",
+    ]
+  }
+  placeholder="Select pizza size"
+  type="select"
+/>
+`;
