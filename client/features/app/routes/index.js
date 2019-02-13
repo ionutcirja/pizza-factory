@@ -1,4 +1,4 @@
-import Factory from '../../factory/components/root';
+import Factory from '../../factory/containers/root';
 import Cart from '../../cart/components/root';
 
 export default [
