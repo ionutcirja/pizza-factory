@@ -22,5 +22,16 @@ describe('FormField component', () => {
       const wrapper = shallow(<FormField {...propsToRender} />);
       expect(wrapper).toMatchSnapshot();
     });
+  
+    it('should render a SelectField component if type prop value is select', () => {
+      propsToRender.type = 'select';
+      propsToRender.options = [
+        'option 1',
+        'option 2',
+        'option 3',
+      ];
+      const wrapper = shallow(<FormField {...propsToRender} />);
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

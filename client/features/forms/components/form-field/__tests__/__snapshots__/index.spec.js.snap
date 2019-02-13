@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FormField component render should render a SelectField component if type prop value is select 1`] = `
+<FormikConnect(FieldInner)
+  component={[Function]}
+  options={
+    Array [
+      "option 1",
+      "option 2",
+      "option 3",
+    ]
+  }
+/>
+`;
+
 exports[`FormField component render should render a TextField component if type prop value is text 1`] = `
 <FormikConnect(FieldInner)
   component={[Function]}
