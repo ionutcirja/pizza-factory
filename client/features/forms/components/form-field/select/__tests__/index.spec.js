@@ -15,7 +15,6 @@ describe('SelectField component', () => {
         touched: {},
         errors: {},
       },
-      placeholder: 'select an option',
       options: [
         'option1',
         'option2',
