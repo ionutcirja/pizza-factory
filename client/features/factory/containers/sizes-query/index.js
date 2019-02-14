@@ -22,7 +22,7 @@ const SizesQuery = ({
       if (loading) {
         return (
           <LoadingWrapper
-            message="Loading pizza sizes"
+            message="Loading pizza sizes..."
           />
         );
       }
@@ -30,7 +30,7 @@ const SizesQuery = ({
       if (error) {
         return (
           <ErrorWrapper
-            message="Pizza sizes couldn't be retrieved at this time. Please try again later"
+            message="Pizza sizes couldn't be retrieved at this time. Please try again later."
           />
         );
       }
