@@ -5,6 +5,7 @@ import Ingredients from '../ingredients';
 describe('Ingredients component', () => {
   const propsToRender = {
     maxToppings: 2,
+    basePrice: 10,
     toppings: [
       {
         defaultSelected: true,
@@ -28,12 +29,28 @@ describe('Ingredients component', () => {
         },
       },
     ],
+    setFieldValue: jest.fn(),
   };
   
   describe('render', () => {
     it('should render a checkbox group form field component', () => {
       const wrapper = shallow(<Ingredients {...propsToRender} />);
       expect(wrapper).toMatchSnapshot();
+    });
+  });
+  
+  describe('componentDidMount', () => {
+    it('should set base price field value', () => {
+      shallow(<Ingredients {...propsToRender} />);
+      expect(propsToRender.setFieldValue).toHaveBeenCalledWith('basePrice', propsToRender.basePrice);
+    });
+  });
+  
+  describe('componentDidUpdate', () => {
+    it('should update base price field value if basePrice prop value is changed', () => {
+      const wrapper = shallow(<Ingredients {...propsToRender} />);
+      wrapper.instance().componentDidUpdate({ basePrice: 9 });
+      expect(propsToRender.setFieldValue).toHaveBeenCalledWith('basePrice', 10);
     });
   });
 });
