@@ -1,11 +1,11 @@
 import gql from 'graphql-tag';
 
 export const GET_SIZES = gql`
-{
-  pizzaSizes {
-    name
+  {
+    pizzaSizes {
+      name
+    }
   }
-}
 `;
 
 export const GET_SIZE_BY_NAME = gql`
