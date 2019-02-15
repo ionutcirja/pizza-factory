@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ingredients component render should render a checkbox group form field component 1`] = `
+<Fragment>
+  <FormField
+    isFieldArray={true}
+    list={
+      Array [
+        Object {
+          "label": "option 1 (1)",
+          "value": 1,
+        },
+        Object {
+          "label": "option 2 (2)",
+          "value": 2,
+        },
+        Object {
+          "label": "option 3 (3)",
+          "value": 3,
+        },
+      ]
+    }
+    maxAllowed={2}
+    name="toppings"
+    type="checkbox_group"
+  />
+</Fragment>
+`;

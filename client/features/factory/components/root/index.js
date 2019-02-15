@@ -1,59 +1,17 @@
 // @flow
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import SizesQuery from '../../containers/sizes-query';
 import IngredientsQuery from '../../containers/ingredients-query';
-import FormField from '../../../forms/components/form-field';
 import Loading from '../loading';
 import Error from '../error';
-
-type SizesProps = {
-  options: Array<string>,
-};
-
-export const Sizes = ({ options }: SizesProps) => (
-  <FormField
-    name="size"
-    type="select"
-    placeholder="Select pizza size"
-    options={options}
-  />
-);
-
-type IngredientsProps = {
-  maxToppings: number | null,
-  toppings: Array<{
-    defaultSelected: boolean,
-    topping: {
-      name: string,
-      price: number,
-    }
-  }>
-};
-
-export const Ingredients = ({
-  maxToppings,
-  toppings,
-}: IngredientsProps) => (
-  <Fragment>
-    <FormField
-      name="toppings"
-      type="checkbox_group"
-      isFieldArray
-      list={toppings.map(item => (
-        {
-          label: `${item.topping.name} (${item.topping.price})`,
-          value: item.topping.price,
-        }
-      ))}
-      maxAllowed={maxToppings}
-    />
-  </Fragment>
-);
+import Sizes from './sizes';
+import Ingredients from './ingredients';
 
 type Props = {
   values: {
     size: string,
   },
+  isValid: boolean,
   setFieldValue: Function,
   handleSubmit: Function,
 };
@@ -67,7 +25,11 @@ class Factory extends Component<Props> {
   }
   
   render() {
-    const { values, handleSubmit } = this.props;
+    const {
+      values,
+      handleSubmit,
+      isValid,
+    } = this.props;
     
     return (
       <form onSubmit={handleSubmit}>
@@ -85,7 +47,13 @@ class Factory extends Component<Props> {
             Component={Ingredients}
           />
         )}
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          disabled={!isValid}
+        >
+          Add to cart
+        </button>
+        
       </form>
     );
   }
