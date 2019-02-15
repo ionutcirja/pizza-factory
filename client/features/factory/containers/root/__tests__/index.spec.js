@@ -23,6 +23,14 @@ describe('Factory container', () => {
           expect(error.message).not.toEqual('');
         });
       });
+  
+      it('should validate toppings field to contain at least one item', () => {
+        const wrapper = shallow(<Factory />);
+        const schema = wrapper.props().validationSchema();
+        return schema.validate({ toppings: [] }).catch((error) => {
+          expect(error.message).not.toEqual('');
+        });
+      });
     });
   });
 });
