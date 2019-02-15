@@ -16,6 +16,7 @@ const ValidationSchema = Yup.object().shape({
 
 const mapPropsToValues = () => ({
   size: '',
+  basePrice: 0,
   toppings: [],
 });
 

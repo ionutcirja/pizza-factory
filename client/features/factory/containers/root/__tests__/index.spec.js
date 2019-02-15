@@ -10,6 +10,7 @@ describe('Factory container', () => {
         const props = wrapper.props();
         expect(props.initialValues).toEqual({
           size: '',
+          basePrice: 0,
           toppings: [],
         });
       });
