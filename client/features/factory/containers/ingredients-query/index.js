@@ -16,6 +16,7 @@ const IngredientsQuery = ({
   LoadingWrapper,
   ErrorWrapper,
   Component,
+  ...rest
 }: Props) => (
   <Query
     query={GET_SIZE_BY_NAME}
@@ -42,7 +43,7 @@ const IngredientsQuery = ({
       }
       
       return (
-        <Component {...pizzaSizeByName} />
+        <Component {...pizzaSizeByName} {...rest} />
       );
     }}
   </Query>
