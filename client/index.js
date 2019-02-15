@@ -6,6 +6,7 @@ import { ApolloProvider } from 'react-apollo';
 import { Provider } from 'react-redux';
 import createStore from './store';
 import client from './config/apollo';
+import './config/math';
 import GlobalStyle from './style';
 import routes from './features/app/routes';
 import App from './features/app/components/root';
