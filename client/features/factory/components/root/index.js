@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import math from 'mathjs';
 import SizesQuery from '../../containers/sizes-query';
 import IngredientsQuery from '../../containers/ingredients-query';
 import Loading from '../loading';
@@ -7,9 +8,22 @@ import Error from '../error';
 import Sizes from './sizes';
 import Ingredients from './ingredients';
 
+const computePrice = (basePrice: number, ingredients: Array<number>) => (
+  math.format(
+    math.add(
+      math.bignumber(basePrice),
+      ingredients.reduce(
+        (acc, curr) => math.add(math.bignumber(acc), math.bignumber(curr)), math.bignumber(0),
+      ),
+    ),
+  )
+);
+
 type Props = {
   values: {
     size: string,
+    basePrice: number,
+    toppings: Array<number>,
   },
   isValid: boolean,
   setFieldValue: Function,
@@ -39,6 +53,7 @@ class Factory extends Component<Props> {
       values,
       handleSubmit,
       isValid,
+      setFieldValue,
     } = this.props;
     
     return (
@@ -52,10 +67,17 @@ class Factory extends Component<Props> {
         && (
           <IngredientsQuery
             size={values.size.toUpperCase()}
+            setFieldValue={setFieldValue}
             LoadingWrapper={Loading}
             ErrorWrapper={Error}
             Component={Ingredients}
           />
+        )}
+        {values.basePrice > 0
+        && (
+          <span>
+            {computePrice(values.basePrice, values.toppings)}
+          </span>
         )}
         <button
           type="submit"

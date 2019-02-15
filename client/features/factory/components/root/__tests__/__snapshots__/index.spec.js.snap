@@ -27,8 +27,35 @@ exports[`Factory component render should render an ingredient query component if
     Component={[Function]}
     ErrorWrapper={[Function]}
     LoadingWrapper={[Function]}
+    setFieldValue={[MockFunction]}
     size="LARGE"
   />
+  <button
+    disabled={true}
+    type="submit"
+  >
+    Add to cart
+  </button>
+</form>
+`;
+
+exports[`Factory component render should render computed price if base price value is bigger than zero 1`] = `
+<form>
+  <SizesQuery
+    Component={[Function]}
+    ErrorWrapper={[Function]}
+    LoadingWrapper={[Function]}
+  />
+  <IngredientsQuery
+    Component={[Function]}
+    ErrorWrapper={[Function]}
+    LoadingWrapper={[Function]}
+    setFieldValue={[MockFunction]}
+    size="LARGE"
+  />
+  <span>
+    10.6
+  </span>
   <button
     disabled={true}
     type="submit"
