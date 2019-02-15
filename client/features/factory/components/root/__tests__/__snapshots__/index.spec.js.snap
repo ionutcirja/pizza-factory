@@ -1,23 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Factory component render should render a sizes query component 1`] = `
-<form>
+<Form>
   <SizesQuery
     Component={[Function]}
     ErrorWrapper={[Function]}
     LoadingWrapper={[Function]}
   />
-  <button
-    disabled={true}
-    type="submit"
-  >
-    Add to cart
-  </button>
-</form>
+  <ButtonsContainer>
+    <Button
+      disabled={true}
+      type="submit"
+    >
+      Add to cart
+    </Button>
+  </ButtonsContainer>
+</Form>
 `;
 
 exports[`Factory component render should render an ingredient query component if size value is truthy 1`] = `
-<form>
+<Form>
   <SizesQuery
     Component={[Function]}
     ErrorWrapper={[Function]}
@@ -30,17 +32,19 @@ exports[`Factory component render should render an ingredient query component if
     setFieldValue={[MockFunction]}
     size="LARGE"
   />
-  <button
-    disabled={true}
-    type="submit"
-  >
-    Add to cart
-  </button>
-</form>
+  <ButtonsContainer>
+    <Button
+      disabled={true}
+      type="submit"
+    >
+      Add to cart
+    </Button>
+  </ButtonsContainer>
+</Form>
 `;
 
 exports[`Factory component render should render computed price if base price value is bigger than zero 1`] = `
-<form>
+<Form>
   <SizesQuery
     Component={[Function]}
     ErrorWrapper={[Function]}
@@ -53,14 +57,16 @@ exports[`Factory component render should render computed price if base price val
     setFieldValue={[MockFunction]}
     size="LARGE"
   />
-  <span>
-    10.6
-  </span>
-  <button
-    disabled={true}
-    type="submit"
-  >
-    Add to cart
-  </button>
-</form>
+  <ButtonsContainer>
+    <Button
+      disabled={true}
+      type="submit"
+    >
+      Add to cart
+      <span>
+        10.6
+      </span>
+    </Button>
+  </ButtonsContainer>
+</Form>
 `;

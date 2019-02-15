@@ -7,6 +7,11 @@ import Loading from '../loading';
 import Error from '../error';
 import Sizes from './sizes';
 import Ingredients from './ingredients';
+import {
+  Form,
+  ButtonsContainer,
+  Button,
+} from '../../style';
 
 const computePrice = (basePrice: number, ingredients: Array<number>) => (
   math.format(
@@ -57,7 +62,7 @@ class Factory extends Component<Props> {
     } = this.props;
     
     return (
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <SizesQuery
           LoadingWrapper={Loading}
           ErrorWrapper={Error}
@@ -73,20 +78,21 @@ class Factory extends Component<Props> {
             Component={Ingredients}
           />
         )}
-        {values.basePrice > 0
-        && (
-          <span>
-            {computePrice(values.basePrice, values.toppings)}
-          </span>
-        )}
-        <button
-          type="submit"
-          disabled={!isValid}
-        >
-          Add to cart
-        </button>
-        
-      </form>
+        <ButtonsContainer>
+          <Button
+            type="submit"
+            disabled={!isValid}
+          >
+            Add to cart
+            {values.basePrice > 0
+            && (
+              <span>
+                {computePrice(values.basePrice, values.toppings)}
+              </span>
+            )}
+          </Button>
+        </ButtonsContainer>
+      </Form>
     );
   }
 }
