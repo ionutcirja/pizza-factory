@@ -8,6 +8,8 @@ describe('Factory component', () => {
       size: '',
     },
     setFieldValue: jest.fn(),
+    setFieldTouched: jest.fn(),
+    setFieldError: jest.fn(),
   };
   
   describe('render', () => {
@@ -29,6 +31,8 @@ describe('Factory component', () => {
       const wrapper = shallow(<Factory {...propsToRender} />);
       expect(wrapper.instance().componentDidUpdate({ values: { size: 'large' } }));
       expect(propsToRender.setFieldValue).toHaveBeenCalledWith('toppings', []);
+      expect(propsToRender.setFieldError).toHaveBeenCalledWith('toppings', '');
+      expect(propsToRender.setFieldTouched).toHaveBeenCalledWith('toppings', false);
     });
   });
 });

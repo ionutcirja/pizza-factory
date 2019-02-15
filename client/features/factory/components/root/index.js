@@ -13,14 +13,24 @@ type Props = {
   },
   isValid: boolean,
   setFieldValue: Function,
+  setFieldTouched: Function,
+  setFieldError: Function,
   handleSubmit: Function,
 };
 
 class Factory extends Component<Props> {
   componentDidUpdate(prevProps: Props) {
-    const { setFieldValue, values } = this.props;
+    const {
+      setFieldValue,
+      setFieldTouched,
+      setFieldError,
+      values,
+    } = this.props;
+    
     if (values.size !== prevProps.values.size) {
       setFieldValue('toppings', []);
+      setFieldTouched('toppings', false);
+      setFieldError('toppings', '');
     }
   }
   
