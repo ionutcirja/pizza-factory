@@ -37,6 +37,7 @@ export const Select = styled.div`
     background-image: none;
     appearance: none;
     color: ${({ colour }) => colour};
+    text-transform: capitalize;
   }
 `;
 
