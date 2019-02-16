@@ -14,6 +14,7 @@ export const ButtonsContainer = styled.div`
 
 export const Button = styled.button`
   display: inline-block;
+  position: relative;
   width: 200px;
   height: 40px;
   padding: 0;
@@ -21,9 +22,11 @@ export const Button = styled.button`
   outline: none;
   text-align: center;
   border-radius: 5px;
-  color: $color-white;
+  font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
+  background: ${({ bgColour }) => bgColour};
+  color: ${({ colour }) => colour};
   
   &:hover {
     text-decoration: underline;
@@ -39,6 +42,11 @@ export const Button = styled.button`
   }
   
   span {
-    margin-left: 10px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    font-size: 0.6rem;
+    color: ${({ labelColour }) => labelColour}
   }
 `;
