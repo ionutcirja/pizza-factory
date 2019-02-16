@@ -4,7 +4,7 @@ import { withTheme } from 'styled-components';
 import {
   CartWrapper,
   Message,
-} from '../../styles';
+} from '../../style';
 
 type Props = {
   theme: {
