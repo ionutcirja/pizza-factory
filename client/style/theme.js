@@ -6,6 +6,7 @@ export default {
     darkBlue: '#3f5a77',
     turquoise: '#8bd3c7',
     red: '#ef705f',
+    grey: '#9a9a9a',
   },
   bezier: {
     easeOutCubic: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
