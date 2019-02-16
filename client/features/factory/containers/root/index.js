@@ -1,7 +1,7 @@
 // @flow
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import Factory from '../../components/root';
+import Component from '../../components/root';
 
 type Values = {
   [key: string]: any,
@@ -29,4 +29,4 @@ export default withFormik({
   validationSchema: ValidationSchema,
   mapPropsToValues,
   handleSubmit,
-})(Factory);
+})(Component);

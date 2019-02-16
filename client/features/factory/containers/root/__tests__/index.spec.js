@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Factory from '..';
 
+jest.mock('../../../components/root', () => () => <span>mock</span>);
+
 describe('Factory container', () => {
   describe('form', () => {
     describe('mapPropsToValues', () => {
