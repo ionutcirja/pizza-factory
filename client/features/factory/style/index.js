@@ -10,6 +10,14 @@ export const Form = styled.form`
 
 export const ButtonsContainer = styled.div`
   margin-top: auto;
+  
+  button {
+    margin-right: 20px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const Button = styled.button`
