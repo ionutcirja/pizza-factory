@@ -13,6 +13,7 @@
     "!**/routes/**",
     "!index.js",
     "!**/config/**",
+    "!**/types/**",
     "!coverage/**",
     "!webpack.dev.config.js",
     "!client/index.js",
