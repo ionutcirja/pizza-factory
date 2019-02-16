@@ -50,3 +50,9 @@ export const Button = styled.button`
     color: ${({ labelColour }) => labelColour}
   }
 `;
+
+export const Message = styled.div`
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: ${({ colour }) => colour}
+`;

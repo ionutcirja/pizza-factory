@@ -1,10 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Loading from '..';
+import { Loading } from '..';
 
 describe('Loading component', () => {
   const propsToRender = {
     message: 'loading...',
+    theme: {
+      colours: {
+        blue: 'blue',
+      },
+    },
   };
   
   describe('render', () => {

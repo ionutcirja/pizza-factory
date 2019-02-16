@@ -4,8 +4,8 @@ import { withTheme } from 'styled-components';
 import math from 'mathjs';
 import SizesQuery from '../../containers/sizes-query';
 import IngredientsQuery from '../../containers/ingredients-query';
-import Loading from '../loading';
-import Error from '../error';
+import LoadingWrapper from '../loading';
+import ErrorWrapper from '../error';
 import Sizes from './sizes';
 import Ingredients from './ingredients';
 import {
@@ -73,8 +73,8 @@ export class Factory extends Component<Props> {
     return (
       <Form onSubmit={handleSubmit}>
         <SizesQuery
-          LoadingWrapper={Loading}
-          ErrorWrapper={Error}
+          LoadingWrapper={LoadingWrapper}
+          ErrorWrapper={ErrorWrapper}
           Component={Sizes}
         />
         {values.size
@@ -82,8 +82,8 @@ export class Factory extends Component<Props> {
           <IngredientsQuery
             size={values.size.toUpperCase()}
             setFieldValue={setFieldValue}
-            LoadingWrapper={Loading}
-            ErrorWrapper={Error}
+            LoadingWrapper={LoadingWrapper}
+            ErrorWrapper={ErrorWrapper}
             Component={Ingredients}
           />
         )}

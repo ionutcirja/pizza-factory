@@ -1,10 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Error from '..';
+import { Error } from '..';
 
 describe('Error component', () => {
   const propsToRender = {
     message: 'error',
+    theme: {
+      colours: {
+        red: 'red',
+      },
+    },
   };
   
   describe('render', () => {

@@ -4,8 +4,20 @@ exports[`Factory component render should render a sizes query component 1`] = `
 <Form>
   <SizesQuery
     Component={[Function]}
-    ErrorWrapper={[Function]}
-    LoadingWrapper={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
   />
   <ButtonsContainer>
     <Button
@@ -25,13 +37,37 @@ exports[`Factory component render should render an ingredient query component if
 <Form>
   <SizesQuery
     Component={[Function]}
-    ErrorWrapper={[Function]}
-    LoadingWrapper={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
   />
   <IngredientsQuery
     Component={[Function]}
-    ErrorWrapper={[Function]}
-    LoadingWrapper={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
     setFieldValue={[MockFunction]}
     size="LARGE"
   />
@@ -53,13 +89,37 @@ exports[`Factory component render should render computed price if base price val
 <Form>
   <SizesQuery
     Component={[Function]}
-    ErrorWrapper={[Function]}
-    LoadingWrapper={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
   />
   <IngredientsQuery
     Component={[Function]}
-    ErrorWrapper={[Function]}
-    LoadingWrapper={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
     setFieldValue={[MockFunction]}
     size="LARGE"
   />
