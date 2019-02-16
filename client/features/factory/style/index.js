@@ -56,3 +56,11 @@ export const Message = styled.div`
   line-height: 2rem;
   color: ${({ colour }) => colour}
 `;
+
+export const SizesWrapper = styled.div`
+  margin-bottom: 30px;
+`;
+
+export const IngredientsWrapper = styled.div`
+  margin-bottom: 30px;
+`;
