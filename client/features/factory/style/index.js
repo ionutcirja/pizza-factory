@@ -6,6 +6,7 @@ export const Form = styled.form`
   align-items: center;
   min-height: 100vh;
   padding: 80px;
+  width: 100%;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -64,9 +65,13 @@ export const Message = styled.div`
 `;
 
 export const SizesWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
   margin-bottom: 30px;
 `;
 
 export const IngredientsWrapper = styled.div`
+  width: 100%;
+  max-width: 400px;
   margin-bottom: 30px;
 `;

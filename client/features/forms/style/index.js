@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const FieldSet = styled.fieldset`
   position: relative;
-  width: 400px;
+  display: block;
+  width: 100%;
 `;
 
 export const Text = styled.input.attrs({
