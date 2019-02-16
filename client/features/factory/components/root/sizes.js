@@ -10,6 +10,7 @@ const Sizes = ({ options }: Props) => (
   <FormField
     name="size"
     type="select"
+    label="Please select your desired size"
     placeholder="Select pizza size"
     options={options}
   />

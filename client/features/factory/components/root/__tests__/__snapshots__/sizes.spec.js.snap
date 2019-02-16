@@ -2,6 +2,7 @@
 
 exports[`Sizes component render should render a select form field component 1`] = `
 <FormField
+  label="Please select your desired size"
   name="size"
   options={
     Array [
