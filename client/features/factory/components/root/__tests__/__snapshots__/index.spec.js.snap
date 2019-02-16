@@ -9,7 +9,10 @@ exports[`Factory component render should render a sizes query component 1`] = `
   />
   <ButtonsContainer>
     <Button
+      bgColour="dark blue"
+      colour="white"
       disabled={true}
+      labelColour="turquoise"
       type="submit"
     >
       Add to cart
@@ -34,7 +37,10 @@ exports[`Factory component render should render an ingredient query component if
   />
   <ButtonsContainer>
     <Button
+      bgColour="dark blue"
+      colour="white"
       disabled={true}
+      labelColour="turquoise"
       type="submit"
     >
       Add to cart
@@ -59,7 +65,10 @@ exports[`Factory component render should render computed price if base price val
   />
   <ButtonsContainer>
     <Button
+      bgColour="dark blue"
+      colour="white"
       disabled={true}
+      labelColour="turquoise"
       type="submit"
     >
       Add to cart

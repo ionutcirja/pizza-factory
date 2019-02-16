@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Factory from '..';
+import { Factory } from '..';
+
+// TODO dive in order to test properly (waiting for https://github.com/airbnb/enzyme/issues/1647 to be fixed)
 
 describe('Factory component', () => {
   const propsToRender = {
@@ -12,6 +14,13 @@ describe('Factory component', () => {
     setFieldValue: jest.fn(),
     setFieldTouched: jest.fn(),
     setFieldError: jest.fn(),
+    theme: {
+      colours: {
+        darkBlue: 'dark blue',
+        white: 'white',
+        turquoise: 'turquoise',
+      },
+    },
   };
   
   describe('render', () => {

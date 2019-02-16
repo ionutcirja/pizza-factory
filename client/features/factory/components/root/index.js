@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { withTheme } from 'styled-components';
 import math from 'mathjs';
 import SizesQuery from '../../containers/sizes-query';
 import IngredientsQuery from '../../containers/ingredients-query';
@@ -35,9 +36,16 @@ type Props = {
   setFieldTouched: Function,
   setFieldError: Function,
   handleSubmit: Function,
+  theme: {
+    colours: {
+      darkBlue: string,
+      white: string,
+      turquoise: string,
+    },
+  },
 };
 
-class Factory extends Component<Props> {
+export class Factory extends Component<Props> {
   componentDidUpdate(prevProps: Props) {
     const {
       setFieldValue,
@@ -59,6 +67,7 @@ class Factory extends Component<Props> {
       handleSubmit,
       isValid,
       setFieldValue,
+      theme,
     } = this.props;
     
     return (
@@ -82,6 +91,9 @@ class Factory extends Component<Props> {
           <Button
             type="submit"
             disabled={!isValid}
+            bgColour={theme.colours.darkBlue}
+            colour={theme.colours.white}
+            labelColour={theme.colours.turquoise}
           >
             Add to cart
             {values.basePrice > 0
@@ -97,4 +109,4 @@ class Factory extends Component<Props> {
   }
 }
 
-export default Factory;
+export default withTheme(Factory);
