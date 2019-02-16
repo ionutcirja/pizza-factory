@@ -30,6 +30,7 @@ export const Checkbox = styled.input.attrs({
     margin-bottom: 0;
     padding-left: 30px;
     line-height: 1.4rem;
+    text-transform: capitalize;
     
     &:before {
       content: '';
@@ -66,6 +67,14 @@ export const Checkbox = styled.input.attrs({
   &:disabled + label {
     cursor: not-allowed;
     opacity: 0.25;
+  }
+`;
+
+export const CheckboxWrapper = styled.div`
+  margin-bottom: 10px;
+  
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
