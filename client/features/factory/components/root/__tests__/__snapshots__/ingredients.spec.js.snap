@@ -4,6 +4,7 @@ exports[`Ingredients component render should render a checkbox group form field 
 <IngredientsWrapper>
   <FormField
     isFieldArray={true}
+    label="Please select your desired toppings (maximum 2)"
     list={
       Array [
         Object {

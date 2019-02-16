@@ -44,6 +44,7 @@ class Ingredients extends Component<Props> {
         <FormField
           name="toppings"
           type="checkbox_group"
+          label={`Please select your desired toppings${maxToppings ? ` (maximum ${maxToppings})` : ''}`}
           isFieldArray
           list={toppings.map(item => (
             {
