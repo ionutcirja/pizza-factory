@@ -33,4 +33,20 @@ export type Action = {
   },
 };
 
-export type State = {};
+export type Cart = {
+  +list: {
+    [id: string]: {
+      +size: string,
+      +basePrice: number,
+      +toppings: Array<{
+        +name: string,
+        +value: any,
+      }>,
+      +quantity: number,
+    },
+  },
+};
+
+export type State = {
+  +cart: Cart,
+};
