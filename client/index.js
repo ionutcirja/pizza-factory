@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import theme from './style/theme';
 import createStore from './store';
 import client from './config/apollo';
 import './config/math';
@@ -19,7 +21,9 @@ render(
     <GlobalStyle />
     <Provider store={store}>
       <BrowserRouter>
-        <App routes={routes} />
+        <ThemeProvider theme={theme}>
+          <App routes={routes} />
+        </ThemeProvider>
       </BrowserRouter>
     </Provider>
   </ApolloProvider>,
