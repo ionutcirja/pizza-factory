@@ -53,8 +53,6 @@ export class CheckboxGroupField extends Component<Props> {
       theme,
     } = this.props;
     
-    console.log(form.touched[field.name], form.errors[field.name]);
-    
     return (
       <FieldSet>
         { /* eslint-disable jsx-a11y/label-has-for */ }
