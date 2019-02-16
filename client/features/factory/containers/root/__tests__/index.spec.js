@@ -35,7 +35,8 @@ describe('Factory container', () => {
     });
     
     describe('submit', () => {
-      it('should call add to cart prop action and reset the form', () => {
+      it('should extend the values by added a quantity value,'
+        + ' call add to cart prop action and reset the form', () => {
         const values = {
           size: 'large',
         };
@@ -52,6 +53,7 @@ describe('Factory container', () => {
         expect(bag.props.actions.addToCart).toHaveBeenCalledWith({
           uuid: {
             size: 'large',
+            quantity: 1,
           },
         });
         expect(bag.resetForm).toHaveBeenCalled();

@@ -37,7 +37,10 @@ const mapPropsToValues = () => ({
 const handleSubmit = (values: Values, bag: Bag) => {
   const { props, resetForm } = bag;
   props.actions.addToCart({
-    [uuid()]: values,
+    [uuid()]: {
+      ...values,
+      quantity: 1,
+    },
   });
   resetForm();
 };
