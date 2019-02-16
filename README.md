@@ -8,12 +8,12 @@ yarn install
 
 ## Startup
 
-In order to run the client in development mode, open another terminal and type (any change into the code will rebuild the code):
+In order to run the client in development mode, open a terminal window and type (any change into the code will rebuild the code):
 ```
-yarn run dev
+yarn start
 ```
 
-Now open http://localhost:8080/ in a browser.
+Now open http://localhost:8080/ in a browser (preferably Chrome).
 
 ## Tests
 
