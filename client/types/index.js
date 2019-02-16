@@ -23,4 +23,14 @@ export type FormFieldProps = {
   },
 };
 
+export type Action = {
+  +type: string,
+  +meta?: {
+    [key: string]: any,
+  },
+  +payload: {
+    [key: string]: any,
+  },
+};
+
 export type State = {};
