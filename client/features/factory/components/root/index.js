@@ -88,7 +88,7 @@ export const Factory = ({
         {values.basePrice > 0
         && (
           <span>
-            {computePrice(values.basePrice, values.toppings)}
+            {`(${computePrice(values.basePrice, values.toppings)})`}
           </span>
         )}
       </Button>

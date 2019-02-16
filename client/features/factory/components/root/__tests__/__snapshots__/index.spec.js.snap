@@ -50,7 +50,7 @@ exports[`Factory component render should render a checkout button if canCheckout
     >
       Add to cart
       <span>
-        10.6
+        (10.6)
       </span>
     </Button>
     <Link
@@ -206,7 +206,7 @@ exports[`Factory component render should render computed price if base price val
     >
       Add to cart
       <span>
-        10.6
+        (10.6)
       </span>
     </Button>
   </ButtonsContainer>

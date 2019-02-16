@@ -50,11 +50,9 @@ export const Button = styled.button`
   }
   
   span {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 16px;
-    font-size: 0.6rem;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.8rem;
     color: ${({ labelColour }) => labelColour}
   }
 `;
