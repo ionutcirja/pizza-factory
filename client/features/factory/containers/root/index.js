@@ -6,6 +6,8 @@ import type { Dispatch } from 'redux';
 import * as Yup from 'yup';
 import uuid from 'uuid/v1';
 import * as Actions from '../../../cart/actions';
+import { cartListNumSelector } from '../../../cart/selectors';
+import type { State } from '../../../../types';
 import Component from '../../components/root';
 
 type Values = {
@@ -52,11 +54,15 @@ export const Form = withFormik({
   handleSubmit,
 })(Component);
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+export const mapStateToProps = (state: State) => ({
+  canCheckout: cartListNumSelector(state) > 0,
+});
+
+export const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: bindActionCreators(Actions, dispatch),
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(Form);
