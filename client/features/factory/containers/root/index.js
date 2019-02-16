@@ -9,9 +9,9 @@ type Values = {
 
 const ValidationSchema = Yup.object().shape({
   size: Yup.string()
-    .required('Please select a size'),
+    .required('Please select a size.'),
   toppings: Yup.array()
-    .min(1, 'Please select at least one topping. We are not selling bread here. &#128513'),
+    .min(1, 'Please select at least one topping.'),
 });
 
 const mapPropsToValues = () => ({
