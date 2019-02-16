@@ -4,7 +4,7 @@ import { withTheme } from 'styled-components';
 import type { FormFieldProps } from '../../../../../types';
 import {
   FieldSet,
-  Input,
+  Text,
   Error, Label,
 } from '../../../style';
 
@@ -36,7 +36,7 @@ export const TextField = ({
     >
       {label}
     </Label>
-    <Input
+    <Text
       {...field}
       id={field.name}
       placeholder={placeholder}

@@ -8,7 +8,7 @@ exports[`TextField component render should render a disabled text input if disab
   >
     label
   </Label>
-  <Input
+  <Text
     borderColour="grey"
     borderErrorColour="red"
     colour="black"
@@ -30,7 +30,7 @@ exports[`TextField component render should render a text input 1`] = `
   >
     label
   </Label>
-  <Input
+  <Text
     borderColour="grey"
     borderErrorColour="red"
     colour="black"
@@ -51,7 +51,7 @@ exports[`TextField component render should render an error if field is touched a
   >
     label
   </Label>
-  <Input
+  <Text
     borderColour="grey"
     borderErrorColour="red"
     colour="black"

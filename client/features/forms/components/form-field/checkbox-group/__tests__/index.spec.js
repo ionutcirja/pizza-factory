@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CheckboxGroupField from '..';
+import { CheckboxGroupField } from '..';
 
 describe('CheckboxGroupField component', () => {
   let propsToRender;
@@ -30,6 +30,14 @@ describe('CheckboxGroupField component', () => {
         touched: {},
         errors: {},
         setFieldValue: jest.fn(),
+      },
+      theme: {
+        colours: {
+          grey: 'grey',
+          black: 'black',
+          red: 'red',
+          blue: 'blue',
+        },
       },
     };
   });
@@ -72,14 +80,14 @@ describe('CheckboxGroupField component', () => {
     it('should add a checkbox value into the values list on change if it is not already contained', () => {
       propsToRender.field.value = ['1'];
       const wrapper = shallow(<CheckboxGroupField {...propsToRender} />);
-      wrapper.find('Input').at(2).props().onChange({ target: { value: '2' } });
+      wrapper.find('Checkbox').at(2).props().onChange({ target: { value: '2' } });
       expect(propsToRender.form.setFieldValue).toHaveBeenCalledWith('option', ['1', '2']);
     });
   
     it('should remove a checkbox value from the values list on change if it is already contained', () => {
       propsToRender.field.value = ['1', '2'];
       const wrapper = shallow(<CheckboxGroupField {...propsToRender} />);
-      wrapper.find('Input').at(1).props().onChange({ target: { value: '1' } });
+      wrapper.find('Checkbox').at(1).props().onChange({ target: { value: '1' } });
       expect(propsToRender.form.setFieldValue).toHaveBeenCalledWith('option', ['2']);
     });
   });

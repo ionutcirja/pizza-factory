@@ -1,22 +1,33 @@
 // @flow
 import React, { Component } from 'react';
+import { withTheme } from 'styled-components';
 import type { FormFieldProps } from '../../../../../types';
 import {
   FieldSet,
-  Input,
+  Label,
+  Checkbox,
   Error,
 } from '../../../style';
 
 type Props = FormFieldProps & {
   maxAllowed: number | null,
+  label: string,
   list: Array<{
     label: string,
     value: any,
     disabled?: boolean,
   }>,
+  theme: {
+    colours: {
+      grey: string,
+      black: string,
+      red: string,
+      blue: string,
+    }
+  }
 };
 
-class CheckboxGroupField extends Component<Props> {
+export class CheckboxGroupField extends Component<Props> {
   onChange = (evt: SyntheticInputEvent<*>) => {
     const { field, form } = this.props;
     const { value } = evt.target;
@@ -38,31 +49,54 @@ class CheckboxGroupField extends Component<Props> {
       list,
       maxAllowed,
       form,
+      label,
+      theme,
     } = this.props;
+    
+    console.log(form.touched[field.name], form.errors[field.name]);
     
     return (
       <FieldSet>
+        { /* eslint-disable jsx-a11y/label-has-for */ }
+        <Label as="legend" colour={theme.colours.grey}>
+          {label}
+        </Label>
+        { /* eslint-enable */ }
         {list.map(({ value }, index) => (
-          <Input
-            key={value}
-            {...field}
-            type="checkbox"
-            name={`${field.name}.${index}`}
-            value={value}
-            checked={field.value.includes(String(value))}
-            disabled={maxAllowed
-              && field.value.length >= maxAllowed
-              && !field.value.includes(String(value))
-            }
-            onChange={this.onChange}
-          />
+          <div key={value}>
+            <Checkbox
+              {...field}
+              type="checkbox"
+              id={`${field.name}.${index}`}
+              name={`${field.name}.${index}`}
+              value={value}
+              checked={field.value.includes(String(value))}
+              disabled={maxAllowed
+                && field.value.length >= maxAllowed
+                && !field.value.includes(String(value))
+              }
+              error={form.touched[field.name] && form.errors[field.name]}
+              borderColour={theme.colours.grey}
+              borderErrorColour={theme.colours.red}
+              checkColour={theme.colours.blue}
+              onChange={this.onChange}
+            />
+            <Label
+              htmlFor={`${field.name}.${index}`}
+              colour={theme.colours.grey}
+            >
+              {value}
+            </Label>
+          </div>
         ))}
         {form.touched[field.name] && form.errors[field.name] && (
-          <Error>{form.errors[field.name]}</Error>
+          <Error colour={theme.colours.red}>
+            {form.errors[field.name]}
+          </Error>
         )}
       </FieldSet>
     );
   }
 }
 
-export default CheckboxGroupField;
+export default withTheme(CheckboxGroupField);

@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import { Field } from 'formik';
 import Text from './text';
 import Select from './select';
-import CheckboxGroupField from './checkbox-group';
+import CheckboxGroup from './checkbox-group';
 import type { FormFieldProps } from '../../../../types';
 
 const fieldComponentMap = {
   text: Text,
   select: Select,
-  checkbox_group: CheckboxGroupField,
+  checkbox_group: CheckboxGroup,
 };
 
 const getFieldComponent = (type: string = 'text') => fieldComponentMap[type];
