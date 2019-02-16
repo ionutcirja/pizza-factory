@@ -25,4 +25,5 @@ const Cart = ({ theme }: Props) => (
 
 // TODO fix warning when react-router 4.4 will be available
 // Invalid prop `component` of type `object` supplied to `Route`, expected `function`.
+// https://github.com/ReactTraining/react-router/issues/6471#issuecomment-438292209
 export default withTheme(Cart);
