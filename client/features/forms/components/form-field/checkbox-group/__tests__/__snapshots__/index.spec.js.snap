@@ -6,7 +6,7 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
     as="legend"
     colour="grey"
   />
-  <div
+  <CheckboxWrapper
     key="1"
   >
     <Checkbox
@@ -15,20 +15,20 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checkColour="blue"
       checked={false}
       disabled={false}
-      id="option.0"
-      name="option.0"
+      id="option 1"
+      name="option 1"
       onChange={[Function]}
       type="checkbox"
       value={1}
     />
     <Label
       colour="grey"
-      htmlFor="option.0"
+      htmlFor="option 1"
     >
-      1
+      option 1 (1)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="2"
   >
     <Checkbox
@@ -37,20 +37,20 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checkColour="blue"
       checked={false}
       disabled={false}
-      id="option.1"
-      name="option.1"
+      id="option 2"
+      name="option 2"
       onChange={[Function]}
       type="checkbox"
       value={2}
     />
     <Label
       colour="grey"
-      htmlFor="option.1"
+      htmlFor="option 2"
     >
-      2
+      option 2 (2)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="3"
   >
     <Checkbox
@@ -59,20 +59,20 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checkColour="blue"
       checked={false}
       disabled={false}
-      id="option.2"
-      name="option.2"
+      id="option 3"
+      name="option 3"
       onChange={[Function]}
       type="checkbox"
       value={3}
     />
     <Label
       colour="grey"
-      htmlFor="option.2"
+      htmlFor="option 3"
     >
-      3
+      option 3 (3)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="4"
   >
     <Checkbox
@@ -81,19 +81,19 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checkColour="blue"
       checked={false}
       disabled={false}
-      id="option.3"
-      name="option.3"
+      id="option 4"
+      name="option 4"
       onChange={[Function]}
       type="checkbox"
       value={4}
     />
     <Label
       colour="grey"
-      htmlFor="option.3"
+      htmlFor="option 4"
     >
-      4
+      option 4 (4)
     </Label>
-  </div>
+  </CheckboxWrapper>
 </FieldSet>
 `;
 
@@ -103,7 +103,7 @@ exports[`CheckboxGroupField component render should render an error if field is 
     as="legend"
     colour="grey"
   />
-  <div
+  <CheckboxWrapper
     key="1"
   >
     <Checkbox
@@ -113,20 +113,20 @@ exports[`CheckboxGroupField component render should render an error if field is 
       checked={false}
       disabled={false}
       error="some error"
-      id="option.0"
-      name="option.0"
+      id="option 1"
+      name="option 1"
       onChange={[Function]}
       type="checkbox"
       value={1}
     />
     <Label
       colour="grey"
-      htmlFor="option.0"
+      htmlFor="option 1"
     >
-      1
+      option 1 (1)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="2"
   >
     <Checkbox
@@ -136,20 +136,20 @@ exports[`CheckboxGroupField component render should render an error if field is 
       checked={false}
       disabled={false}
       error="some error"
-      id="option.1"
-      name="option.1"
+      id="option 2"
+      name="option 2"
       onChange={[Function]}
       type="checkbox"
       value={2}
     />
     <Label
       colour="grey"
-      htmlFor="option.1"
+      htmlFor="option 2"
     >
-      2
+      option 2 (2)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="3"
   >
     <Checkbox
@@ -159,20 +159,20 @@ exports[`CheckboxGroupField component render should render an error if field is 
       checked={false}
       disabled={false}
       error="some error"
-      id="option.2"
-      name="option.2"
+      id="option 3"
+      name="option 3"
       onChange={[Function]}
       type="checkbox"
       value={3}
     />
     <Label
       colour="grey"
-      htmlFor="option.2"
+      htmlFor="option 3"
     >
-      3
+      option 3 (3)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="4"
   >
     <Checkbox
@@ -182,19 +182,19 @@ exports[`CheckboxGroupField component render should render an error if field is 
       checked={false}
       disabled={false}
       error="some error"
-      id="option.3"
-      name="option.3"
+      id="option 4"
+      name="option 4"
       onChange={[Function]}
       type="checkbox"
       value={4}
     />
     <Label
       colour="grey"
-      htmlFor="option.3"
+      htmlFor="option 4"
     >
-      4
+      option 4 (4)
     </Label>
-  </div>
+  </CheckboxWrapper>
   <Error
     colour="red"
   >
@@ -209,51 +209,51 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
     as="legend"
     colour="grey"
   />
-  <div
+  <CheckboxWrapper
     key="1"
   >
     <Checkbox
       borderColour="grey"
       borderErrorColour="red"
       checkColour="blue"
-      checked={true}
+      checked={false}
       disabled={false}
-      id="option.0"
-      name="option.0"
+      id="option 1"
+      name="option 1"
       onChange={[Function]}
       type="checkbox"
       value={1}
     />
     <Label
       colour="grey"
-      htmlFor="option.0"
+      htmlFor="option 1"
     >
-      1
+      option 1 (1)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="2"
   >
     <Checkbox
       borderColour="grey"
       borderErrorColour="red"
       checkColour="blue"
-      checked={true}
+      checked={false}
       disabled={false}
-      id="option.1"
-      name="option.1"
+      id="option 2"
+      name="option 2"
       onChange={[Function]}
       type="checkbox"
       value={2}
     />
     <Label
       colour="grey"
-      htmlFor="option.1"
+      htmlFor="option 2"
     >
-      2
+      option 2 (2)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="3"
   >
     <Checkbox
@@ -262,20 +262,20 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
       checkColour="blue"
       checked={false}
       disabled={false}
-      id="option.2"
-      name="option.2"
+      id="option 3"
+      name="option 3"
       onChange={[Function]}
       type="checkbox"
       value={3}
     />
     <Label
       colour="grey"
-      htmlFor="option.2"
+      htmlFor="option 3"
     >
-      3
+      option 3 (3)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="4"
   >
     <Checkbox
@@ -284,19 +284,19 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
       checkColour="blue"
       checked={false}
       disabled={false}
-      id="option.3"
-      name="option.3"
+      id="option 4"
+      name="option 4"
       onChange={[Function]}
       type="checkbox"
       value={4}
     />
     <Label
       colour="grey"
-      htmlFor="option.3"
+      htmlFor="option 4"
     >
-      4
+      option 4 (4)
     </Label>
-  </div>
+  </CheckboxWrapper>
 </FieldSet>
 `;
 
@@ -306,73 +306,73 @@ exports[`CheckboxGroupField component render should render some disabled checkbo
     as="legend"
     colour="grey"
   />
-  <div
+  <CheckboxWrapper
     key="1"
   >
     <Checkbox
       borderColour="grey"
       borderErrorColour="red"
       checkColour="blue"
-      checked={true}
-      disabled={false}
-      id="option.0"
-      name="option.0"
+      checked={false}
+      disabled={true}
+      id="option 1"
+      name="option 1"
       onChange={[Function]}
       type="checkbox"
       value={1}
     />
     <Label
       colour="grey"
-      htmlFor="option.0"
+      htmlFor="option 1"
     >
-      1
+      option 1 (1)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="2"
   >
     <Checkbox
       borderColour="grey"
       borderErrorColour="red"
       checkColour="blue"
-      checked={true}
-      disabled={false}
-      id="option.1"
-      name="option.1"
+      checked={false}
+      disabled={true}
+      id="option 2"
+      name="option 2"
       onChange={[Function]}
       type="checkbox"
       value={2}
     />
     <Label
       colour="grey"
-      htmlFor="option.1"
+      htmlFor="option 2"
     >
-      2
+      option 2 (2)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="3"
   >
     <Checkbox
       borderColour="grey"
       borderErrorColour="red"
       checkColour="blue"
-      checked={true}
-      disabled={false}
-      id="option.2"
-      name="option.2"
+      checked={false}
+      disabled={true}
+      id="option 3"
+      name="option 3"
       onChange={[Function]}
       type="checkbox"
       value={3}
     />
     <Label
       colour="grey"
-      htmlFor="option.2"
+      htmlFor="option 3"
     >
-      3
+      option 3 (3)
     </Label>
-  </div>
-  <div
+  </CheckboxWrapper>
+  <CheckboxWrapper
     key="4"
   >
     <Checkbox
@@ -381,18 +381,18 @@ exports[`CheckboxGroupField component render should render some disabled checkbo
       checkColour="blue"
       checked={false}
       disabled={true}
-      id="option.3"
-      name="option.3"
+      id="option 4"
+      name="option 4"
       onChange={[Function]}
       type="checkbox"
       value={4}
     />
     <Label
       colour="grey"
-      htmlFor="option.3"
+      htmlFor="option 4"
     >
-      4
+      option 4 (4)
     </Label>
-  </div>
+  </CheckboxWrapper>
 </FieldSet>
 `;

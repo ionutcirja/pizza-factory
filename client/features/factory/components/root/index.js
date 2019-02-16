@@ -14,12 +14,12 @@ import {
   Button,
 } from '../../style';
 
-const computePrice = (basePrice: number, ingredients: Array<number>) => (
+const computePrice = (basePrice: number, ingredients: Array<{name: string, value: number}>) => (
   math.format(
     math.add(
       math.bignumber(basePrice),
       ingredients.reduce(
-        (acc, curr) => math.add(math.bignumber(acc), math.bignumber(curr)), math.bignumber(0),
+        (acc, curr) => math.add(math.bignumber(acc), math.bignumber(curr.value)), math.bignumber(0),
       ),
     ),
   )
@@ -29,7 +29,7 @@ type Props = {
   values: {
     size: string,
     basePrice: number,
-    toppings: Array<number>,
+    toppings: Array<{name: string, value: number}>,
   },
   isValid: boolean,
   setFieldValue: Function,

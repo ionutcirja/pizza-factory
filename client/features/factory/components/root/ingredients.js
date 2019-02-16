@@ -48,7 +48,7 @@ class Ingredients extends Component<Props> {
           isFieldArray
           list={toppings.map(item => (
             {
-              label: `${item.topping.name} (${item.topping.price})`,
+              name: item.topping.name,
               value: item.topping.price,
             }
           ))}

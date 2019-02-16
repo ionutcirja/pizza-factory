@@ -6,6 +6,7 @@ import {
   FieldSet,
   Label,
   Checkbox,
+  CheckboxWrapper,
   Error,
 } from '../../../style';
 
@@ -13,7 +14,7 @@ type Props = FormFieldProps & {
   maxAllowed: number | null,
   label: string,
   list: Array<{
-    label: string,
+    name: string,
     value: any,
     disabled?: boolean,
   }>,
@@ -27,18 +28,26 @@ type Props = FormFieldProps & {
   }
 };
 
+const hasValue = (
+  valuesList: Array<{ name: string, value: any}>,
+  itemToFind: { name: string, value: any },
+) => (
+  valuesList.filter(item => (item.name === itemToFind.name && item.value === itemToFind.value))
+    .length > 0
+);
+
 export class CheckboxGroupField extends Component<Props> {
   onChange = (evt: SyntheticInputEvent<*>) => {
     const { field, form } = this.props;
-    const { value } = evt.target;
+    const { value, name } = evt.target;
     
-    if (field.value.includes(value)) {
+    if (hasValue(field.value, { name, value })) {
       const nextValue = field.value.filter(
-        item => item !== value,
+        item => item.value !== value && item.name !== value,
       );
       form.setFieldValue(field.name, nextValue);
     } else {
-      const nextValue = field.value.concat(value);
+      const nextValue = field.value.concat({ name, value });
       form.setFieldValue(field.name, nextValue);
     }
   };
@@ -53,6 +62,8 @@ export class CheckboxGroupField extends Component<Props> {
       theme,
     } = this.props;
     
+    console.log(field.value);
+    
     return (
       <FieldSet>
         { /* eslint-disable jsx-a11y/label-has-for */ }
@@ -60,18 +71,18 @@ export class CheckboxGroupField extends Component<Props> {
           {label}
         </Label>
         { /* eslint-enable */ }
-        {list.map(({ value }, index) => (
-          <div key={value}>
+        {list.map(({ value, name }) => (
+          <CheckboxWrapper key={value}>
             <Checkbox
               {...field}
               type="checkbox"
-              id={`${field.name}.${index}`}
-              name={`${field.name}.${index}`}
+              id={`${name}`}
+              name={`${name}`}
               value={value}
-              checked={field.value.includes(String(value))}
+              checked={hasValue(field.value, { name, value: String(value) })}
               disabled={maxAllowed
                 && field.value.length >= maxAllowed
-                && !field.value.includes(String(value))
+                && !hasValue(field.value, { name, value: String(value) })
               }
               error={form.touched[field.name] && form.errors[field.name]}
               borderColour={theme.colours.grey}
@@ -80,12 +91,12 @@ export class CheckboxGroupField extends Component<Props> {
               onChange={this.onChange}
             />
             <Label
-              htmlFor={`${field.name}.${index}`}
+              htmlFor={`${name}`}
               colour={theme.colours.grey}
             >
-              {value}
+              {`${name} (${value})`}
             </Label>
-          </div>
+          </CheckboxWrapper>
         ))}
         {form.touched[field.name] && form.errors[field.name] && (
           <Error colour={theme.colours.red}>

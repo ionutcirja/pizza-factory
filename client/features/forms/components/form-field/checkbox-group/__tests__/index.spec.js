@@ -13,15 +13,19 @@ describe('CheckboxGroupField component', () => {
       },
       list: [
         {
+          name: 'option 1',
           value: 1,
         },
         {
+          name: 'option 2',
           value: 2,
         },
         {
+          name: 'option 3',
           value: 3,
         },
         {
+          name: 'option 4',
           value: 4,
         },
       ],
@@ -78,17 +82,23 @@ describe('CheckboxGroupField component', () => {
   
   describe('events handlers', () => {
     it('should add a checkbox value into the values list on change if it is not already contained', () => {
-      propsToRender.field.value = ['1'];
+      propsToRender.field.value = [{ name: 'option 1', value: '1' }];
       const wrapper = shallow(<CheckboxGroupField {...propsToRender} />);
-      wrapper.find('Checkbox').at(2).props().onChange({ target: { value: '2' } });
-      expect(propsToRender.form.setFieldValue).toHaveBeenCalledWith('option', ['1', '2']);
+      wrapper.find('Checkbox').at(2).props().onChange({ target: { name: 'option 2', value: '2' } });
+      expect(propsToRender.form.setFieldValue).toHaveBeenCalledWith(
+        'option',
+        [{ name: 'option 1', value: '1' }, { name: 'option 2', value: '2' }],
+      );
     });
   
     it('should remove a checkbox value from the values list on change if it is already contained', () => {
-      propsToRender.field.value = ['1', '2'];
+      propsToRender.field.value = [{ name: 'option 1', value: '1' }, { name: 'option 2', value: '2' }];
       const wrapper = shallow(<CheckboxGroupField {...propsToRender} />);
-      wrapper.find('Checkbox').at(1).props().onChange({ target: { value: '1' } });
-      expect(propsToRender.form.setFieldValue).toHaveBeenCalledWith('option', ['2']);
+      wrapper.find('Checkbox').at(1).props().onChange({ target: { name: 'option 1', value: '1' } });
+      expect(propsToRender.form.setFieldValue).toHaveBeenCalledWith(
+        'option',
+        [{ name: 'option 2', value: '2' }],
+      );
     });
   });
 });

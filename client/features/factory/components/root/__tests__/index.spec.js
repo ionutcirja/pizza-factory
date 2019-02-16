@@ -37,7 +37,20 @@ describe('Factory component', () => {
     
     it('should render computed price if base price value is bigger than zero', () => {
       propsToRender.values.basePrice = 10;
-      propsToRender.values.toppings = ['0.1', '0.2', '0.3'];
+      propsToRender.values.toppings = [
+        {
+          name: 'option 1',
+          value: '0.1',
+        },
+        {
+          name: 'option 2',
+          value: '0.2',
+        },
+        {
+          name: 'option 3',
+          value: '0.3',
+        },
+      ];
       const wrapper = shallow(<Factory {...propsToRender} />);
       expect(wrapper).toMatchSnapshot();
     });
