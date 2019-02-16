@@ -35,6 +35,8 @@ exports[`Factory component render should render a checkout button if canCheckout
         "render": [Function],
       }
     }
+    setFieldError={[MockFunction]}
+    setFieldTouched={[MockFunction]}
     setFieldValue={[MockFunction]}
     size="LARGE"
   />
@@ -135,6 +137,8 @@ exports[`Factory component render should render an ingredient query component if
         "render": [Function],
       }
     }
+    setFieldError={[MockFunction]}
+    setFieldTouched={[MockFunction]}
     setFieldValue={[MockFunction]}
     size="LARGE"
   />
@@ -187,6 +191,8 @@ exports[`Factory component render should render computed price if base price val
         "render": [Function],
       }
     }
+    setFieldError={[MockFunction]}
+    setFieldTouched={[MockFunction]}
     setFieldValue={[MockFunction]}
     size="LARGE"
   />

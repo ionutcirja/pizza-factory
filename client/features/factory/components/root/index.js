@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { withTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
 import math from 'mathjs';
@@ -48,81 +48,64 @@ type Props = {
   },
 };
 
-export class Factory extends Component<Props> {
-  componentDidUpdate(prevProps: Props) {
-    const {
-      setFieldValue,
-      setFieldTouched,
-      setFieldError,
-      values,
-    } = this.props;
-    
-    if (values.size !== prevProps.values.size) {
-      setFieldValue('toppings', []);
-      setFieldTouched('toppings', false);
-      setFieldError('toppings', '');
-    }
-  }
-  
-  render() {
-    const {
-      values,
-      handleSubmit,
-      isValid,
-      setFieldValue,
-      canCheckout,
-      theme,
-    } = this.props;
-    
-    return (
-      <Form onSubmit={handleSubmit}>
-        <SizesQuery
-          LoadingWrapper={LoadingWrapper}
-          ErrorWrapper={ErrorWrapper}
-          Component={Sizes}
-        />
-        {values.size
+export const Factory = ({
+  values,
+  handleSubmit,
+  isValid,
+  setFieldValue,
+  setFieldTouched,
+  setFieldError,
+  canCheckout,
+  theme,
+}: Props) => (
+  <Form onSubmit={handleSubmit}>
+    <SizesQuery
+      LoadingWrapper={LoadingWrapper}
+      ErrorWrapper={ErrorWrapper}
+      Component={Sizes}
+    />
+    {values.size
+    && (
+      <IngredientsQuery
+        size={values.size.toUpperCase()}
+        setFieldValue={setFieldValue}
+        setFieldTouched={setFieldTouched}
+        setFieldError={setFieldError}
+        LoadingWrapper={LoadingWrapper}
+        ErrorWrapper={ErrorWrapper}
+        Component={Ingredients}
+      />
+    )}
+    <ButtonsContainer>
+      <Button
+        type="submit"
+        disabled={!isValid}
+        bgColour={theme.colours.darkBlue}
+        colour={theme.colours.white}
+        labelColour={theme.colours.turquoise}
+      >
+        Add to cart
+        {values.basePrice > 0
         && (
-          <IngredientsQuery
-            size={values.size.toUpperCase()}
-            setFieldValue={setFieldValue}
-            LoadingWrapper={LoadingWrapper}
-            ErrorWrapper={ErrorWrapper}
-            Component={Ingredients}
-          />
+          <span>
+            {computePrice(values.basePrice, values.toppings)}
+          </span>
         )}
-        <ButtonsContainer>
+      </Button>
+      {canCheckout
+      && (
+        <Link to="/cart">
           <Button
-            type="submit"
-            disabled={!isValid}
-            bgColour={theme.colours.darkBlue}
+            type="button"
+            bgColour={theme.colours.red}
             colour={theme.colours.white}
-            labelColour={theme.colours.turquoise}
           >
-            Add to cart
-            {values.basePrice > 0
-            && (
-              <span>
-                {computePrice(values.basePrice, values.toppings)}
-              </span>
-            )}
+            Checkout
           </Button>
-          {canCheckout
-          && (
-            <Link to="/cart">
-              <Button
-                type="button"
-                bgColour={theme.colours.red}
-                colour={theme.colours.white}
-              >
-                Checkout
-              </Button>
-            </Link>
-          )}
-        </ButtonsContainer>
-      </Form>
-    );
-  }
-}
+        </Link>
+      )}
+    </ButtonsContainer>
+  </Form>
+);
 
 export default withTheme(Factory);

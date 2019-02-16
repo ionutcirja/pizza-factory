@@ -11,26 +11,54 @@ type Props = {
     topping: {
       name: string,
       price: number,
-    }
+    },
   }>,
   setFieldValue: Function,
+  setFieldTouched: Function,
+  setFieldError: Function,
 };
 
 class Ingredients extends Component<Props> {
   componentDidMount() {
-    this.setBasePriceValue();
+    this.setFieldsDefaultValues();
   }
   
   componentDidUpdate(prevProps: Props) {
     const { basePrice } = this.props;
     if (basePrice !== prevProps.basePrice) {
-      this.setBasePriceValue();
+      this.setFieldsDefaultValues();
     }
+  }
+  
+  setFieldsDefaultValues() {
+    this.setBasePriceValue();
+    this.setToppingsValue();
   }
   
   setBasePriceValue() {
     const { setFieldValue, basePrice } = this.props;
     setFieldValue('basePrice', basePrice);
+  }
+  
+  setToppingsValue() {
+    const {
+      setFieldValue,
+      setFieldTouched,
+      setFieldError,
+      toppings,
+    } = this.props;
+    
+    setFieldTouched('toppings', false);
+    setFieldError('toppings', '');
+    setFieldValue(
+      'toppings',
+      toppings
+        .filter(item => item.defaultSelected)
+        .map(({ topping }) => ({
+          name: topping.name,
+          value: String(topping.price),
+        })),
+    );
   }
   
   render() {
