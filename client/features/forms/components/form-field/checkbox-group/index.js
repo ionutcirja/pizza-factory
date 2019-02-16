@@ -90,7 +90,7 @@ export class CheckboxGroupField extends Component<Props> {
             />
             <Label
               htmlFor={`${name}`}
-              colour={theme.colours.grey}
+              colour={theme.colours.black}
             >
               {`${name} (${value})`}
             </Label>
