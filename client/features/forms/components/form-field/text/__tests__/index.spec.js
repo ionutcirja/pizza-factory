@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TextField from '..';
+import { TextField } from '..';
 
 describe('TextField component', () => {
   let propsToRender;
@@ -16,6 +16,14 @@ describe('TextField component', () => {
         errors: {},
       },
       placeholder: 'search',
+      label: 'label',
+      theme: {
+        colours: {
+          grey: 'grey',
+          black: 'black',
+          red: 'red',
+        },
+      },
     };
   });
   

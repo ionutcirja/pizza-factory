@@ -2,121 +2,176 @@
 
 exports[`SelectField component render should render a disabled default option if placeholder prop value is truthy 1`] = `
 <FieldSet>
-  <Select
-    name="select"
-    value=""
+  <Label
+    colour="grey"
+    htmlFor="select"
   >
-    <option
-      disabled={true}
+    label
+  </Label>
+  <Select
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
+  >
+    <select
+      id="select"
+      name="select"
       value=""
     >
-      select an option
-    </option>
-    <option
-      key="option1"
-      value="option1"
-    >
-      option1
-    </option>
-    <option
-      key="option2"
-      value="option2"
-    >
-      option2
-    </option>
-    <option
-      key="option3"
-      value="option3"
-    >
-      option3
-    </option>
+      <option
+        disabled={true}
+        value=""
+      >
+        select an option
+      </option>
+      <option
+        key="option1"
+        value="option1"
+      >
+        option1
+      </option>
+      <option
+        key="option2"
+        value="option2"
+      >
+        option2
+      </option>
+      <option
+        key="option3"
+        value="option3"
+      >
+        option3
+      </option>
+    </select>
   </Select>
 </FieldSet>
 `;
 
 exports[`SelectField component render should render a disabled select field if disabled prop value is truthy 1`] = `
 <FieldSet>
-  <Select
-    disabled={true}
-    name="select"
-    value=""
+  <Label
+    colour="grey"
+    htmlFor="select"
   >
-    <option
-      key="option1"
-      value="option1"
+    label
+  </Label>
+  <Select
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
+  >
+    <select
+      disabled={true}
+      id="select"
+      name="select"
+      value=""
     >
-      option1
-    </option>
-    <option
-      key="option2"
-      value="option2"
-    >
-      option2
-    </option>
-    <option
-      key="option3"
-      value="option3"
-    >
-      option3
-    </option>
+      <option
+        key="option1"
+        value="option1"
+      >
+        option1
+      </option>
+      <option
+        key="option2"
+        value="option2"
+      >
+        option2
+      </option>
+      <option
+        key="option3"
+        value="option3"
+      >
+        option3
+      </option>
+    </select>
   </Select>
 </FieldSet>
 `;
 
 exports[`SelectField component render should render a select field containing a list of options 1`] = `
 <FieldSet>
-  <Select
-    name="select"
-    value=""
+  <Label
+    colour="grey"
+    htmlFor="select"
   >
-    <option
-      key="option1"
-      value="option1"
+    label
+  </Label>
+  <Select
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
+  >
+    <select
+      id="select"
+      name="select"
+      value=""
     >
-      option1
-    </option>
-    <option
-      key="option2"
-      value="option2"
-    >
-      option2
-    </option>
-    <option
-      key="option3"
-      value="option3"
-    >
-      option3
-    </option>
+      <option
+        key="option1"
+        value="option1"
+      >
+        option1
+      </option>
+      <option
+        key="option2"
+        value="option2"
+      >
+        option2
+      </option>
+      <option
+        key="option3"
+        value="option3"
+      >
+        option3
+      </option>
+    </select>
   </Select>
 </FieldSet>
 `;
 
 exports[`SelectField component render should render an error if field is touched and there is an error defined for the current field 1`] = `
 <FieldSet>
-  <Select
-    name="select"
-    value=""
+  <Label
+    colour="grey"
+    htmlFor="select"
   >
-    <option
-      key="option1"
-      value="option1"
+    label
+  </Label>
+  <Select
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
+    error="some error"
+  >
+    <select
+      id="select"
+      name="select"
+      value=""
     >
-      option1
-    </option>
-    <option
-      key="option2"
-      value="option2"
-    >
-      option2
-    </option>
-    <option
-      key="option3"
-      value="option3"
-    >
-      option3
-    </option>
+      <option
+        key="option1"
+        value="option1"
+      >
+        option1
+      </option>
+      <option
+        key="option2"
+        value="option2"
+      >
+        option2
+      </option>
+      <option
+        key="option3"
+        value="option3"
+      >
+        option3
+      </option>
+    </select>
   </Select>
-  <Error>
+  <Error
+    colour="red"
+  >
     some error
   </Error>
 </FieldSet>

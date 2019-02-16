@@ -1,14 +1,14 @@
 // @flow
 import React, { Component } from 'react';
 import { Field } from 'formik';
-import TextField from './text';
-import SelectField from './select';
+import Text from './text';
+import Select from './select';
 import CheckboxGroupField from './checkbox-group';
 import type { FormFieldProps } from '../../../../types';
 
 const fieldComponentMap = {
-  text: TextField,
-  select: SelectField,
+  text: Text,
+  select: Select,
   checkbox_group: CheckboxGroupField,
 };
 

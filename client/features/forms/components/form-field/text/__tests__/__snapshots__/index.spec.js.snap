@@ -2,8 +2,18 @@
 
 exports[`TextField component render should render a disabled text input if disabled prop value is truthy 1`] = `
 <FieldSet>
+  <Label
+    colour="grey"
+    htmlFor="id"
+  >
+    label
+  </Label>
   <Input
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
     disabled={true}
+    id="id"
     name="id"
     placeholder="search"
     type="text"
@@ -14,7 +24,17 @@ exports[`TextField component render should render a disabled text input if disab
 
 exports[`TextField component render should render a text input 1`] = `
 <FieldSet>
+  <Label
+    colour="grey"
+    htmlFor="id"
+  >
+    label
+  </Label>
   <Input
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
+    id="id"
     name="id"
     placeholder="search"
     type="text"
@@ -25,13 +45,26 @@ exports[`TextField component render should render a text input 1`] = `
 
 exports[`TextField component render should render an error if field is touched and there is an error defined for the current field 1`] = `
 <FieldSet>
+  <Label
+    colour="grey"
+    htmlFor="id"
+  >
+    label
+  </Label>
   <Input
+    borderColour="grey"
+    borderErrorColour="red"
+    colour="black"
+    error="some error"
+    id="id"
     name="id"
     placeholder="search"
     type="text"
     value=""
   />
-  <Error>
+  <Error
+    colour="red"
+  >
     some error
   </Error>
 </FieldSet>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SelectField from '..';
+import { SelectField } from '..';
 
 describe('SelectField component', () => {
   let propsToRender;
@@ -20,6 +20,14 @@ describe('SelectField component', () => {
         'option2',
         'option3',
       ],
+      label: 'label',
+      theme: {
+        colours: {
+          grey: 'grey',
+          black: 'black',
+          red: 'red',
+        },
+      },
     };
   });
   
