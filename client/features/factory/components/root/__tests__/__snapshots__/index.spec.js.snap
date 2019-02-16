@@ -1,5 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Factory component render should render a checkout button if canCheckout prop value is truthy 1`] = `
+<Form>
+  <SizesQuery
+    Component={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
+  />
+  <IngredientsQuery
+    Component={[Function]}
+    ErrorWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Error)",
+        "render": [Function],
+      }
+    }
+    LoadingWrapper={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "displayName": "WithTheme(Loading)",
+        "render": [Function],
+      }
+    }
+    setFieldValue={[MockFunction]}
+    size="LARGE"
+  />
+  <ButtonsContainer>
+    <Button
+      bgColour="dark blue"
+      colour="white"
+      disabled={true}
+      labelColour="turquoise"
+      type="submit"
+    >
+      Add to cart
+      <span>
+        10.6
+      </span>
+    </Button>
+    <Link
+      replace={false}
+      to="/cart"
+    >
+      <Button
+        bgColour="red"
+        colour="white"
+        type="button"
+      >
+        Checkout
+      </Button>
+    </Link>
+  </ButtonsContainer>
+</Form>
+`;
+
 exports[`Factory component render should render a sizes query component 1`] = `
 <Form>
   <SizesQuery

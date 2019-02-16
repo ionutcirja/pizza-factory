@@ -19,6 +19,7 @@ describe('Factory component', () => {
         darkBlue: 'dark blue',
         white: 'white',
         turquoise: 'turquoise',
+        red: 'red',
       },
     },
   };
@@ -51,6 +52,12 @@ describe('Factory component', () => {
           value: '0.3',
         },
       ];
+      const wrapper = shallow(<Factory {...propsToRender} />);
+      expect(wrapper).toMatchSnapshot();
+    });
+  
+    it('should render a checkout button if canCheckout prop value is truthy', () => {
+      propsToRender.canCheckout = true;
       const wrapper = shallow(<Factory {...propsToRender} />);
       expect(wrapper).toMatchSnapshot();
     });

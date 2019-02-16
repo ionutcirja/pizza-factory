@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
+import { Link } from 'react-router-dom';
 import math from 'mathjs';
 import SizesQuery from '../../containers/sizes-query';
 import IngredientsQuery from '../../containers/ingredients-query';
@@ -36,11 +37,13 @@ type Props = {
   setFieldTouched: Function,
   setFieldError: Function,
   handleSubmit: Function,
+  canCheckout: boolean,
   theme: {
     colours: {
       darkBlue: string,
       white: string,
       turquoise: string,
+      red: string,
     },
   },
 };
@@ -67,6 +70,7 @@ export class Factory extends Component<Props> {
       handleSubmit,
       isValid,
       setFieldValue,
+      canCheckout,
       theme,
     } = this.props;
     
@@ -103,6 +107,18 @@ export class Factory extends Component<Props> {
               </span>
             )}
           </Button>
+          {canCheckout
+          && (
+            <Link to="/cart">
+              <Button
+                type="button"
+                bgColour={theme.colours.red}
+                colour={theme.colours.white}
+              >
+                Checkout
+              </Button>
+            </Link>
+          )}
         </ButtonsContainer>
       </Form>
     );
