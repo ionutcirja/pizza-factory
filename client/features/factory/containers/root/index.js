@@ -1,10 +1,24 @@
 // @flow
 import { withFormik } from 'formik';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
 import * as Yup from 'yup';
+import uuid from 'uuid/v1';
+import * as Actions from '../../../cart/actions';
 import Component from '../../components/root';
 
 type Values = {
   [key: string]: any,
+};
+
+type Bag = {
+  props: {
+    actions: {
+      addToCart: Function,
+    },
+  },
+  resetForm: Function,
 };
 
 const ValidationSchema = Yup.object().shape({
@@ -20,13 +34,26 @@ const mapPropsToValues = () => ({
   toppings: [],
 });
 
-const handleSubmit = (values: Values) => {
-  console.log(values);
+const handleSubmit = (values: Values, bag: Bag) => {
+  const { props, resetForm } = bag;
+  props.actions.addToCart({
+    [uuid()]: values,
+  });
+  resetForm();
 };
 
-export default withFormik({
+export const Form = withFormik({
   displayName: 'factory-form',
   validationSchema: ValidationSchema,
   mapPropsToValues,
   handleSubmit,
 })(Component);
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  actions: bindActionCreators(Actions, dispatch),
+});
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Form);
