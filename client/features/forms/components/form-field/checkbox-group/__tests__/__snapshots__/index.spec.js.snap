@@ -16,7 +16,7 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checked={false}
       disabled={false}
       id="option 1"
-      name="option 1"
+      name="option.0"
       onChange={[Function]}
       type="checkbox"
       value={1}
@@ -38,7 +38,7 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checked={false}
       disabled={false}
       id="option 2"
-      name="option 2"
+      name="option.1"
       onChange={[Function]}
       type="checkbox"
       value={2}
@@ -60,7 +60,7 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checked={false}
       disabled={false}
       id="option 3"
-      name="option 3"
+      name="option.2"
       onChange={[Function]}
       type="checkbox"
       value={3}
@@ -82,7 +82,7 @@ exports[`CheckboxGroupField component render should render a list of checkboxes 
       checked={false}
       disabled={false}
       id="option 4"
-      name="option 4"
+      name="option.3"
       onChange={[Function]}
       type="checkbox"
       value={4}
@@ -114,7 +114,7 @@ exports[`CheckboxGroupField component render should render an error if field is 
       disabled={false}
       error="some error"
       id="option 1"
-      name="option 1"
+      name="option.0"
       onChange={[Function]}
       type="checkbox"
       value={1}
@@ -137,7 +137,7 @@ exports[`CheckboxGroupField component render should render an error if field is 
       disabled={false}
       error="some error"
       id="option 2"
-      name="option 2"
+      name="option.1"
       onChange={[Function]}
       type="checkbox"
       value={2}
@@ -160,7 +160,7 @@ exports[`CheckboxGroupField component render should render an error if field is 
       disabled={false}
       error="some error"
       id="option 3"
-      name="option 3"
+      name="option.2"
       onChange={[Function]}
       type="checkbox"
       value={3}
@@ -183,7 +183,7 @@ exports[`CheckboxGroupField component render should render an error if field is 
       disabled={false}
       error="some error"
       id="option 4"
-      name="option 4"
+      name="option.3"
       onChange={[Function]}
       type="checkbox"
       value={4}
@@ -219,7 +219,7 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
       checked={false}
       disabled={false}
       id="option 1"
-      name="option 1"
+      name="option.0"
       onChange={[Function]}
       type="checkbox"
       value={1}
@@ -241,7 +241,7 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
       checked={false}
       disabled={false}
       id="option 2"
-      name="option 2"
+      name="option.1"
       onChange={[Function]}
       type="checkbox"
       value={2}
@@ -263,7 +263,7 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
       checked={false}
       disabled={false}
       id="option 3"
-      name="option 3"
+      name="option.2"
       onChange={[Function]}
       type="checkbox"
       value={3}
@@ -285,7 +285,7 @@ exports[`CheckboxGroupField component render should render check checkboxes if t
       checked={false}
       disabled={false}
       id="option 4"
-      name="option 4"
+      name="option.3"
       onChange={[Function]}
       type="checkbox"
       value={4}
@@ -316,7 +316,7 @@ exports[`CheckboxGroupField component render should render some disabled checkbo
       checked={false}
       disabled={true}
       id="option 1"
-      name="option 1"
+      name="option.0"
       onChange={[Function]}
       type="checkbox"
       value={1}
@@ -338,7 +338,7 @@ exports[`CheckboxGroupField component render should render some disabled checkbo
       checked={false}
       disabled={true}
       id="option 2"
-      name="option 2"
+      name="option.1"
       onChange={[Function]}
       type="checkbox"
       value={2}
@@ -360,7 +360,7 @@ exports[`CheckboxGroupField component render should render some disabled checkbo
       checked={false}
       disabled={true}
       id="option 3"
-      name="option 3"
+      name="option.2"
       onChange={[Function]}
       type="checkbox"
       value={3}
@@ -382,7 +382,7 @@ exports[`CheckboxGroupField component render should render some disabled checkbo
       checked={false}
       disabled={true}
       id="option 4"
-      name="option 4"
+      name="option.3"
       onChange={[Function]}
       type="checkbox"
       value={4}

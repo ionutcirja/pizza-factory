@@ -39,15 +39,15 @@ const hasValue = (
 export class CheckboxGroupField extends Component<Props> {
   onChange = (evt: SyntheticInputEvent<*>) => {
     const { field, form } = this.props;
-    const { value, name } = evt.target;
+    const { value, id } = evt.target;
     
-    if (hasValue(field.value, { name, value })) {
+    if (hasValue(field.value, { name: id, value })) {
       const nextValue = field.value.filter(
         item => item.value !== value && item.name !== value,
       );
       form.setFieldValue(field.name, nextValue);
     } else {
-      const nextValue = field.value.concat({ name, value });
+      const nextValue = field.value.concat({ name: id, value });
       form.setFieldValue(field.name, nextValue);
     }
   };
@@ -62,6 +62,8 @@ export class CheckboxGroupField extends Component<Props> {
       theme,
     } = this.props;
     
+    console.log(form.errors[field.name]);
+    
     return (
       <FieldSet>
         { /* eslint-disable jsx-a11y/label-has-for */ }
@@ -69,13 +71,13 @@ export class CheckboxGroupField extends Component<Props> {
           {label}
         </Label>
         { /* eslint-enable */ }
-        {list.map(({ value, name }) => (
+        {list.map(({ value, name }, index) => (
           <CheckboxWrapper key={value}>
             <Checkbox
               {...field}
               type="checkbox"
               id={`${name}`}
-              name={`${name}`}
+              name={`${field.name}.${index}`}
               value={value}
               checked={hasValue(field.value, { name, value: String(value) })}
               disabled={maxAllowed
