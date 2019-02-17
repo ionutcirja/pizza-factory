@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Ingredients component render should render a checkbox group form field component 1`] = `
-<IngredientsWrapper>
+<FieldWrapper>
   <FormField
     isFieldArray={true}
     label="Please select your desired toppings (maximum 2)"
@@ -25,5 +25,5 @@ exports[`Ingredients component render should render a checkbox group form field 
     name="toppings"
     type="checkbox_group"
   />
-</IngredientsWrapper>
+</FieldWrapper>
 `;

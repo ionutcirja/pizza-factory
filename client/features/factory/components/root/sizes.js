@@ -1,14 +1,14 @@
 // @flow
 import React from 'react';
 import FormField from '../../../forms/components/form-field';
-import { SizesWrapper } from '../../style';
+import { FieldWrapper } from '../../style';
 
 type Props = {
   options: Array<string>,
 };
 
 const Sizes = ({ options }: Props) => (
-  <SizesWrapper>
+  <FieldWrapper>
     <FormField
       name="size"
       type="select"
@@ -16,7 +16,7 @@ const Sizes = ({ options }: Props) => (
       placeholder="Select pizza size"
       options={options}
     />
-  </SizesWrapper>
+  </FieldWrapper>
 );
 
 export default Sizes;

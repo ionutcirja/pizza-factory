@@ -64,13 +64,7 @@ export const Message = styled.div`
   color: ${({ colour }) => colour}
 `;
 
-export const SizesWrapper = styled.div`
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 30px;
-`;
-
-export const IngredientsWrapper = styled.div`
+export const FieldWrapper = styled.div`
   width: 100%;
   max-width: 400px;
   margin-bottom: 30px;

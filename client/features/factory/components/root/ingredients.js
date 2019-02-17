@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import FormField from '../../../forms/components/form-field';
-import { IngredientsWrapper } from '../../style';
+import { FieldWrapper } from '../../style';
 
 type Props = {
   basePrice: number,
@@ -68,7 +68,7 @@ class Ingredients extends Component<Props> {
     } = this.props;
     
     return (
-      <IngredientsWrapper>
+      <FieldWrapper>
         <FormField
           name="toppings"
           type="checkbox_group"
@@ -82,7 +82,7 @@ class Ingredients extends Component<Props> {
           ))}
           maxAllowed={maxToppings}
         />
-      </IngredientsWrapper>
+      </FieldWrapper>
     );
   }
 }
