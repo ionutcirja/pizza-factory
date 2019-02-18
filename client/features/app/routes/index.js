@@ -1,5 +1,5 @@
 import Factory from '../../factory/containers/root';
-import Cart from '../../cart/components/root';
+import Cart from '../../cart/containers/root';
 
 export default [
   {
