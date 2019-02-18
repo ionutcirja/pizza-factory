@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Cart component render should render a disable order button if loading prop value is truthy 1`] = `
+<CartWrapper>
+  <List
+    list={
+      Array [
+        "1",
+        "2",
+        "3",
+      ]
+    }
+  />
+  <Connect(WithTheme(Total)) />
+  <ButtonsContainer>
+    <Button
+      bgColour="red"
+      colour="white"
+      disabled="true"
+      onClick={[Function]}
+      type="button"
+    >
+      Sending order
+    </Button>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Button
+        bgColour="dark blue"
+        colour="white"
+        type="button"
+      >
+        Continue shopping
+      </Button>
+    </Link>
+  </ButtonsContainer>
+</CartWrapper>
+`;
+
 exports[`Cart component render should render a go to shopping button and a message if list prop length is equal with 0 1`] = `
 <CartWrapper>
   <Message
@@ -36,6 +74,48 @@ exports[`Cart component render should render a shopping cart list, a place order
     }
   />
   <Connect(WithTheme(Total)) />
+  <ButtonsContainer>
+    <Button
+      bgColour="red"
+      colour="white"
+      onClick={[Function]}
+      type="button"
+    >
+      Place order
+    </Button>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Button
+        bgColour="dark blue"
+        colour="white"
+        type="button"
+      >
+        Continue shopping
+      </Button>
+    </Link>
+  </ButtonsContainer>
+</CartWrapper>
+`;
+
+exports[`Cart component render should render an order message if message prop value is truthy 1`] = `
+<CartWrapper>
+  <List
+    list={
+      Array [
+        "1",
+        "2",
+        "3",
+      ]
+    }
+  />
+  <Connect(WithTheme(Total)) />
+  <Message
+    colour="red"
+  >
+    some message
+  </Message>
   <ButtonsContainer>
     <Button
       bgColour="red"

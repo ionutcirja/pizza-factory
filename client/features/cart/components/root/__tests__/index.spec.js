@@ -8,6 +8,9 @@ describe('Cart component', () => {
   beforeEach(() => {
     propsToRender = {
       list: ['1', '2', '3'],
+      actions: {
+        orderRequest: jest.fn(),
+      },
       theme: {
         colours: {
           red: 'red',
@@ -30,6 +33,26 @@ describe('Cart component', () => {
       propsToRender.list = [];
       const wrapper = shallow(<Cart {...propsToRender} />);
       expect(wrapper).toMatchSnapshot();
+    });
+  
+    it('should render an order message if message prop value is truthy', () => {
+      propsToRender.message = 'some message';
+      const wrapper = shallow(<Cart {...propsToRender} />);
+      expect(wrapper).toMatchSnapshot();
+    });
+  
+    it('should render a disable order button if loading prop value is truthy', () => {
+      propsToRender.loading = 'true';
+      const wrapper = shallow(<Cart {...propsToRender} />);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+  
+  describe('events handlers', () => {
+    it('should call orderRequest prop method on order button click', () => {
+      const wrapper = shallow(<Cart {...propsToRender} />);
+      wrapper.find('Button').at(0).props().onClick();
+      expect(propsToRender.actions.orderRequest).toHaveBeenCalled();
     });
   });
 });
