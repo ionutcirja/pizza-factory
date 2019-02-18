@@ -108,4 +108,37 @@ describe('Cart reducers', () => {
       },
     });
   });
+  
+  it('should add a true value loading prop and empty value message prop'
+    + ' if action type is ORDER_REQUEST', () => {
+    const initialState = { prop: 'value' };
+    deepFreeze(initialState);
+    expect(reducers(initialState, { type: 'ORDER_REQUEST' })).toEqual({
+      prop: 'value',
+      loading: true,
+      message: '',
+    });
+  });
+  
+  it('should add a false value loading prop a success value message prop'
+    + ' if action type is ORDER_SUCCESS', () => {
+    const initialState = { prop: 'value' };
+    deepFreeze(initialState);
+    expect(reducers(initialState, { type: 'ORDER_SUCCESS' })).toEqual({
+      prop: 'value',
+      loading: false,
+      message: 'Order successful.',
+    });
+  });
+  
+  it('should add a false value loading prop an error value message prop'
+    + ' if action type is ORDER_ERROR', () => {
+    const initialState = { prop: 'value' };
+    deepFreeze(initialState);
+    expect(reducers(initialState, { type: 'ORDER_ERROR' })).toEqual({
+      prop: 'value',
+      loading: false,
+      message: 'We could not take your order right now. Please try again later.',
+    });
+  });
 });
