@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import theme from './style/theme';
 import createStore from './store';
+import rootSaga from './sagas';
 import client from './config/apollo';
 import './config/math';
 import GlobalStyle from './style';
@@ -15,6 +16,7 @@ import App from './features/app/components/root';
 
 const initialData = {};
 const store = createStore(initialData, window.__NODE_ENV__ !== 'production');
+store.runSaga(rootSaga);
 
 render(
   <ApolloProvider client={client}>
