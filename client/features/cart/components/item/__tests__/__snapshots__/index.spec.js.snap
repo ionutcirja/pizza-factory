@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component render should render a disabled decrease quantity button if quantity prop value is less or equal than 1 1`] = `
+<CartItem
+  borderColour="string"
+>
+  <RemoveBtn
+    colour="string"
+    onClick={[Function]}
+  />
+  <Description
+    ingredientsColour="string"
+    sizeColour="string"
+  >
+    <span>
+      small
+    </span>
+    <span>
+      (option 1, option 2)
+    </span>
+  </Description>
+  <QuantityWrapper
+    colour="string"
+  >
+    <DecreaseBtn
+      colour="string"
+      disabled={true}
+      disabledColour="string"
+      onClick={[Function]}
+    />
+    <Quantity
+      colour="string"
+    >
+      1
+    </Quantity>
+    <IncreaseBtn
+      colour="string"
+      disabledColour="string"
+      onClick={[Function]}
+    />
+  </QuantityWrapper>
+  <Price
+    colour="string"
+  >
+    10
+  </Price>
+</CartItem>
+`;
+
+exports[`Item component render should render the size, price, quantity, a remove button and both a increase and decrease quantity buttons 1`] = `
+<CartItem
+  borderColour="string"
+>
+  <RemoveBtn
+    colour="string"
+    onClick={[Function]}
+  />
+  <Description
+    ingredientsColour="string"
+    sizeColour="string"
+  >
+    <span>
+      small
+    </span>
+    <span>
+      (option 1, option 2)
+    </span>
+  </Description>
+  <QuantityWrapper
+    colour="string"
+  >
+    <DecreaseBtn
+      colour="string"
+      disabled={false}
+      disabledColour="string"
+      onClick={[Function]}
+    />
+    <Quantity
+      colour="string"
+    >
+      3
+    </Quantity>
+    <IncreaseBtn
+      colour="string"
+      disabledColour="string"
+      onClick={[Function]}
+    />
+  </QuantityWrapper>
+  <Price
+    colour="string"
+  >
+    10
+  </Price>
+</CartItem>
+`;
