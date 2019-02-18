@@ -40,6 +40,7 @@ exports[`Cart component render should render a shopping cart list, a place order
     <Button
       bgColour="red"
       colour="white"
+      onClick={[Function]}
       type="button"
     >
       Place order

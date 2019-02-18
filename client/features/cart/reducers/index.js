@@ -35,4 +35,19 @@ export default handleActions({
       ), {}),
     };
   },
+  [Actions.orderRequest]: (state: Cart) => ({
+    ...state,
+    loading: true,
+    message: '',
+  }),
+  [Actions.orderSuccess]: (state: Cart) => ({
+    ...state,
+    loading: false,
+    message: 'Order successful.',
+  }),
+  [Actions.orderError]: (state: Cart) => ({
+    ...state,
+    loading: false,
+    message: 'We could not take your order right now. Please try again later.',
+  }),
 }, {});
