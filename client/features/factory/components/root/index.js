@@ -2,7 +2,7 @@
 import React from 'react';
 import { withTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
-import math from 'mathjs';
+import { computePrice } from '../../utils';
 import SizesQuery from '../../containers/sizes-query';
 import IngredientsQuery from '../../containers/ingredients-query';
 import LoadingWrapper from '../loading';
@@ -15,16 +15,6 @@ import {
   Button,
 } from '../../style';
 
-const computePrice = (basePrice: number, ingredients: Array<{name: string, value: number}>) => (
-  math.format(
-    math.add(
-      math.bignumber(basePrice),
-      ingredients.reduce(
-        (acc, curr) => math.add(math.bignumber(acc), math.bignumber(curr.value)), math.bignumber(0),
-      ),
-    ),
-  )
-);
 
 type Props = {
   values: {

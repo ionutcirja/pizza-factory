@@ -37,11 +37,8 @@ export type Cart = {
   +list: {
     [id: string]: {
       +size: string,
-      +basePrice: number,
-      +toppings: Array<{
-        +name: string,
-        +value: any,
-      }>,
+      +price: string,
+      +toppings: Array<string>,
       +quantity: number,
     },
   },

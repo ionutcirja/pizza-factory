@@ -5,13 +5,19 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import * as Yup from 'yup';
 import uuid from 'uuid/v1';
+import { computePrice } from '../../utils';
 import * as Actions from '../../../cart/actions';
 import { cartListNumSelector } from '../../../cart/selectors';
 import type { State } from '../../../../types';
 import Component from '../../components/root';
 
 type Values = {
-  [key: string]: any,
+  size: string,
+  basePrice: number,
+  toppings: Array<{
+    name: string,
+    values: string,
+  }>,
 };
 
 type Bag = {
@@ -40,7 +46,9 @@ const handleSubmit = (values: Values, bag: Bag) => {
   const { props, resetForm } = bag;
   props.actions.addToCart({
     [uuid()]: {
-      ...values,
+      size: values.size,
+      price: computePrice(values.basePrice, values.toppings),
+      toppings: values.toppings.reduce((acc, curr) => [...acc, curr.name], []),
       quantity: 1,
     },
   });

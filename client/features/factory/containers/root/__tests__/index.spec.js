@@ -39,6 +39,17 @@ describe('Factory container', () => {
         + ' call add to cart prop action and reset the form', () => {
         const values = {
           size: 'large',
+          basePrice: 10,
+          toppings: [
+            {
+              name: 'option 1',
+              value: '0.1',
+            },
+            {
+              name: 'option 2',
+              value: '0.2',
+            },
+          ],
         };
         const bag = {
           props: {
@@ -53,6 +64,8 @@ describe('Factory container', () => {
         expect(bag.props.actions.addToCart).toHaveBeenCalledWith({
           uuid: {
             size: 'large',
+            price: '10.3',
+            toppings: ['option 1', 'option 2'],
             quantity: 1,
           },
         });
