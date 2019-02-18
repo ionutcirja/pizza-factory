@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Total } from '..';
 
-describe('List component', () => {
+describe('Total component', () => {
   const propsToRender = {
     price: '25.7',
     theme: {

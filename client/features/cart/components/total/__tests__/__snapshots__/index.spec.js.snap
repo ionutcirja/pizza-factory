@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List component render should render the total price 1`] = `
+exports[`Total component render should render the total price 1`] = `
 <TotalWrapper
   colour="dark blue"
 >
