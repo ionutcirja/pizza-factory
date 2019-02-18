@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List component render should render a list of items 1`] = `
+<CartList>
+  <Connect(WithTheme(Item))
+    id="1"
+    key="1"
+  />
+  <Connect(WithTheme(Item))
+    id="2"
+    key="2"
+  />
+  <Connect(WithTheme(Item))
+    id="3"
+    key="3"
+  />
+</CartList>
+`;
