@@ -3,7 +3,7 @@ import math from 'mathjs';
 
 export const computePrice = (
   basePrice: number,
-  ingredients: Array<{name: string, value: number}>,
+  ingredients: Array<{name: string, value: string}>,
 ) => (
   math.format(
     math.add(
