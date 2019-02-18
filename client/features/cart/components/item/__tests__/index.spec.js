@@ -51,6 +51,15 @@ describe('Item component', () => {
       });
     });
   
+    it('should call updateQuantity prop method on decrease quantity button click', () => {
+      const wrapper = shallow(<Item {...propsToRender} />);
+      wrapper.find('IncreaseBtn').props().onClick();
+      expect(propsToRender.actions.updateQuantity).toHaveBeenCalledWith({
+        id: '1',
+        value: 1,
+      });
+    });
+  
     it('should call removeFromCart prop method on remove button click', () => {
       const wrapper = shallow(<Item {...propsToRender} />);
       wrapper.find('RemoveBtn').props().onClick();
