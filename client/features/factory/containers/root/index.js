@@ -16,7 +16,7 @@ type Values = {
   basePrice: number,
   toppings: Array<{
     name: string,
-    values: string,
+    value: string,
   }>,
 };
 
@@ -62,11 +62,11 @@ export const Form = withFormik({
   handleSubmit,
 })(Component);
 
-export const mapStateToProps = (state: State) => ({
+const mapStateToProps = (state: State) => ({
   canCheckout: cartListNumSelector(state) > 0,
 });
 
-export const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: bindActionCreators(Actions, dispatch),
 });
 

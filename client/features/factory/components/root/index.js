@@ -20,7 +20,7 @@ type Props = {
   values: {
     size: string,
     basePrice: number,
-    toppings: Array<{name: string, value: number}>,
+    toppings: Array<{name: string, value: string}>,
   },
   isValid: boolean,
   setFieldValue: Function,
