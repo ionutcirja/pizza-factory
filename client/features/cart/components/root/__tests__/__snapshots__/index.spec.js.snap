@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart component render should render a go to shopping button and a message if list prop length is equal with 0 1`] = `
+<CartWrapper>
+  <Message
+    colour="red"
+  >
+    You didn't add anything yet in your shopping bag.
+  </Message>
+  <ButtonsContainer>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Button
+        bgColour="dark blue"
+        colour="white"
+        type="button"
+      >
+        Go to factory
+      </Button>
+    </Link>
+  </ButtonsContainer>
+</CartWrapper>
+`;
+
+exports[`Cart component render should render a shopping cart list, a place order button and a continue shopping button if list prop length is bigger than 0 1`] = `
+<CartWrapper>
+  <List
+    list={
+      Array [
+        "1",
+        "2",
+        "3",
+      ]
+    }
+  />
+  <Connect(WithTheme(Total)) />
+  <ButtonsContainer>
+    <Button
+      bgColour="red"
+      colour="white"
+      type="button"
+    >
+      Place order
+    </Button>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Button
+        bgColour="dark blue"
+        colour="white"
+        type="button"
+      >
+        Continue shopping
+      </Button>
+    </Link>
+  </ButtonsContainer>
+</CartWrapper>
+`;
