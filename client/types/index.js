@@ -34,6 +34,8 @@ export type Action = {
 };
 
 export type Cart = {
+  +loading: boolean,
+  +message: string,
   +list: {
     [id: string]: {
       +size: string,

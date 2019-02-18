@@ -9,6 +9,8 @@ import * as Actions from '../../actions';
 
 const mapStateToProps = (state: State) => ({
   list: cartListIdsSelector(state),
+  loading: state.cart.loading,
+  message: state.cart.message,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
